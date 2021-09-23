@@ -1,0 +1,110 @@
+﻿@page
+@model ABC_Company_Solution.Pages.ViewSalesInfoModel
+@{
+    ViewData["Title"] = "View Sales Info";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+
+@section styles{
+    <link rel="stylesheet" type="text/css" href="~/lib/DataTables/datatables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/keytable/2.6.0/css/keyTable.dataTables.min.css" />
+}
+
+<section id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">LIST OF <span>PRODUCTS</span></h2>
+            </div>
+
+            <div class="row mb-3" style="margin-bottom:35px;">
+                <div class="col-md-2">
+                    <label>Date</label>
+                    <input type="date" class="form-control" id="searchDate">
+                </div>
+
+                <div class="col-md-2">
+                    <label>Country</label>
+                    <select class="form-control" id="searchCountry">
+                        <option selected disabled value="0">Select Country</option>
+                    </select>
+                </div>
+
+                <div class="col-md-2">
+                    <label>State/Region</label>
+                    <select class="form-control" id="searchState">
+                        <option selected disabled value="0">Select State</option>
+                    </select>
+                </div>
+
+                <div class="col-md-2">
+                    <label>City</label>
+                    <select class="form-control" id="searchCity">
+                        <option selected disabled value="0">Select City</option>
+                    </select>
+                </div>
+
+                <div class="col-md-2">
+                    <button class="btn btn-primary form-control" style=" margin-top: 26px;" id="filterBtn">Search</button>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-danger form-control" style=" margin-top: 26px;" id="ResetBtn">Reset Filter</button>
+                </div>
+            </div>
+
+
+            <table id="salesTbl" class="table nowrap table-striped table-bordered" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        @* <th>S/N</th>*@
+                        <th>Customer Name</th>
+                        <th>Product</th>
+                        <th>Country</th>
+                        <th>State</th>
+                        <th>City</th>
+                        <th>Date of Sale</th>
+                        <th>View Detail</th>
+                    </tr>
+                </thead>
+                <tbody style="color:black;"></tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+@* SINGLE SALES MODAL *@
+<div class="modal fade" id="salesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" style="max-width:80vw; height: 100%" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle" style="color:black;">
+                </h5>
+                <button type="button" id="closeModalBtn" class="close closeMdl">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mt-0 pt-0" style="color:black;">
+                <img src="~/images/progress_indication.gif" id="wait_img" style="margin-left: 28rem;"/>
+                
+                <div style="font-size:15px;">
+                    <span style="font-weight: bold;color: #2d2d47;">Customer Name:</span> <span id="cName"></span><br /><br />
+                    <span style="font-weight: bold;color: #2d2d47;">City Name:</span> <span id="cityName"></span><br /><br />
+                    <span style="font-weight: bold;color: #2d2d47;">Product Name:</span> <span id="productName"></span><br /><br />
+                    <span style="font-weight: bold;color: #2d2d47;">Country Name:</span> <span id="countryName"></span><br /><br />
+                    <span style="font-weight: bold;color: #2d2d47;">Region Name:</span> <span id="regionName"></span><br /><br />
+                    <span style="font-weight: bold;color: #2d2d47;">Price:</span> <span id="price"></span><br /><br />
+                    <span style="font-weight: bold;color: #2d2d47;">Date of Sale:</span> <span id="saleDate"></span><br /><br />
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script defer src="~/lib/moment/moment.min.js"></script>
+    <script type="text/javascript" src="~/lib/DataTables/datatables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/keytable/2.6.0/js/dataTables.keyTable.min.js"></script>
+    <script src="~/js/ViewSales.js" asp-append-version="true"></script>
+}

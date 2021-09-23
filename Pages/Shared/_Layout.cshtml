@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ABC_Company_Solution</title>
+
+    <meta charset="utf-8">
+    <!--
+    Awesome Template
+    http://www.templatemo.com/preview/templatemo_450_awesome
+    -->
+    <title>Awesome Responsive Website</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="~/css/animate.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/templatemo-style.css">
+    @RenderSection("styles", required: false)
+
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/typed.js"></script>
+    <script src="~/js/wow.min.js"></script>
+    <script src="~/js/custom.js"></script>
+    <script src="~/js/CommonFiles.js" asp-append-version="true"></script>
+</head>
+<body id="top">
+
+    <!-- start preloader -->
+    <div class="preloader">
+        <div class="sk-spinner sk-spinner-wave">
+            <div class="sk-rect1"></div>
+            <div class="sk-rect2"></div>
+            <div class="sk-rect3"></div>
+            <div class="sk-rect4"></div>
+            <div class="sk-rect5"></div>
+        </div>
+    </div>
+    <!-- end preloader -->
+    <!-- start header -->
+    @*<header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-4 col-xs-12">
+                    <p><i class="fa fa-phone"></i><span> Phone</span>+91 94884 87853</p>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-12">
+                    <p><i class="fa fa-envelope-o"></i><span> Email</span><a href="mailto:giridesigns5@gmail.com">giridesigns5@gmail.com</a></p>
+                </div>
+                <div class="col-md-5 col-sm-4 col-xs-12">
+                    <ul class="social-icon">
+                        <li><span>Meet us on</span></li>
+                        <li><a href="#" class="fa fa-facebook"></a></li>
+                        <li><a href="#" class="fa fa-twitter"></a></li>
+                        <li><a href="#" class="fa fa-instagram"></a></li>
+                        <li><a href="https://www.youtube.com/channel/UC4yzoGuKkCL_8FzI-B-x83A" class="fa fa-youtube"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>*@
+    <!-- end header -->
+    <!-- start navigation -->
+    <nav class="navbar navbar-default templatemo-nav" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand">ABC Company</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a asp-page="index">HOME</a></li>
+                    <li><a asp-page="NewSales">ADD INFO</a></li>
+                    <li><a asp-page="ViewSalesInfo">VIEW INFO</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- end navigation -->
+
+
+    @RenderBody()
+
+
+    <hr />
+    <footer id="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">
+                        ABC Company &copy; Copyright @DateTime.Now.Year. All Rights Reserved
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

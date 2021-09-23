@@ -1,0 +1,79 @@
+﻿@page
+@model ABC_Company_Solution.Pages.NewSalesModel
+@{
+    ViewData["Title"] = "Add New Sales Info";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">NEW SALES <span>INFORMATION</span></h2>
+            </div>
+            <div class="col-md-2 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-offset="50" data-wow-delay="0.9s">
+            </div>
+
+            <div class="col-md-8 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-offset="50" data-wow-delay="0.9s">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Customer Name</label>
+                        <input name="fullname" type="text" class="form-control" id="fullname" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Country</label>
+                        <select class="form-control" id="country" required>
+                            <option selected disabled value="0">Select Country</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>State/Region</label>
+                        <select type="email" class="form-control" id="state" required>
+                            <option selected disabled value="0">Select State</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>City</label>
+                        <select type="email" class="form-control" id="city" required>
+                            <option selected disabled value="0">Select City</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Date of Sale</label>
+                        <input name="dateOfSale" type="date" class="form-control" id="dateofSale" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Product Quantity</label>
+                        <input name="dateOfSale" type="number" class="form-control" id="quantity" min="0" required>
+                    </div>
+                </div>
+
+
+                <label>Product</label>
+                <select type="email" class="form-control" id="product" required>
+                    <option selected disabled value="0">Select Product</option>
+                </select>
+
+                <button type="button" class="btn btn-success form-control" style="background-color: green;" id="addProductBtn">ADD INFORMATION</button>
+
+            </div>
+            <div class="col-md-2 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-offset="50" data-wow-delay="0.9s">
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+    <script src="~/js/AddSalesInfo.js" asp-append-version="true"></script>
+}

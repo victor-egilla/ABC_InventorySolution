@@ -1,0 +1,23 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<!-- start home -->
+<section id="home">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <h1 class="wow fadeIn" data-wow-offset="50" data-wow-delay="0.9s">Welcome to <span>ABC</span></h1>
+                <div class="element">
+                    <div class="sub-element">Hello, Welcome to ABC Company.</div>
+                    <div class="sub-element">This is a POC for Sales Inventory</div>
+                    <div class="sub-element">Designed by Victor Egilla - sirvictoregilla@gmail.com</div>
+                </div>
+                <a data-scroll asp-page="NewSales" class="btn btn-default wow fadeInUp" data-wow-offset="50" data-wow-delay="0.6s">ADD NEW SALES</a>
+            </div>
+        </div>
+    </div>
+</section>
